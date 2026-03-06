@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail | Superstore Analysis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --accent: #2563eb;
+            --bg: #f1f5f9; /* Slightly darker background to make the "elevated" page pop */
+            --text: #1e293b;
+        }
+
+        /* Basic Setup */
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg); 
+            color: var(--text); 
+            line-height: 1.7; 
+            margin: 0; 
+            padding: 40px 20px;
+        }
+
+        /* Elevated Border / Page Wrapper */
+        .page-wrapper {
+            max-width: 950px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); /* High elevation shadow */
+            animation: slideUp 0.8s ease-out; /* Entry animation for the whole page */
+        }
+
+        .container { max-width: 850px; margin: 0 auto; }
+
+        /* Animations */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .animated-item {
+            animation: slideUp 0.6s ease-out both;
+        }
+
+        /* Staggered animation delays for elements */
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        /* Navigation */
+        .back-link { 
+            text-decoration: none; 
+            color: var(--accent); 
+            font-weight: 600; 
+            display: inline-flex; 
+            align-items: center; 
+            margin-bottom: 30px;
+            transition: transform 0.2s;
+        }
+        .back-link:hover { transform: translateX(-5px); }
+
+        /* Content Styling */
+        .project-header h1 { margin-top: 0; color: var(--primary); }
+        
+        .dashboard-preview {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin: 30px 0;
+            transition: transform 0.3s ease;
+        }
+        .dashboard-preview:hover { transform: scale(1.01); }
+
+        /* Stats Cards with Hover Animation */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
+
+        .stat-card h2 { margin: 5px 0 0; color: var(--primary); font-size: 2rem; }
+
+        .section-title {
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+            margin: 40px 0 20px;
+            color: var(--primary);
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-right: 10px;
+            animation: fadeIn 1s;
+        }
+
+        ul { padding-left: 20px; }
+        li { margin-bottom: 12px; }
+
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="container">
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> &nbsp; Back to Portfolio</a>
+
+        <div class="project-header animated-item">
+            <h1>Superstore Sales & Forecasting Analysis</h1>
+            <div style="margin-bottom: 20px;">
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">DAX</span>
+                <span class="tech-tag">Excel</span>
+            </div>
+        </div>
+
+        <img src="Superstore.png" alt="Superstore Sales Dashboard" class="dashboard-preview animated-item delay-1">
+
+        <div class="stats-grid">
+            <div class="stat-card animated-item delay-2">
+                <p>Total Sales</p>
+                <h2>$1.6M</h2>
+            </div>
+            <div class="stat-card animated-item delay-2">
+                <p>Total Profit</p>
+                <h2>$175K</h2>
+            </div>
+            <div class="stat-card animated-item delay-2">
+                <p>Total Orders</p>
+                <h2>22K</h2>
+            </div>
+        </div>
+
+        <div class="animated-item delay-3">
+            <h2 class="section-title">Project Overview</h2>
+            <p>
+                This project involved creating a comprehensive Business Intelligence solution for a retail "Superstore." 
+                The goal was to analyze sales performance across regions and segments while providing a 15-day 
+                forecast to assist in inventory management.
+            </p>
+
+            <h2 class="section-title">Key Insights from Analysis</h2>
+            <ul>
+                <li><strong>Regional Performance:</strong> The West region contributes the highest sales at 33.37%, followed by the East at 28.75%.</li>
+                <li><strong>Customer Segmentation:</strong> The "Consumer" segment drives nearly 48% of total revenue, highlighting the need for targeted marketing in this area.</li>
+                <li><strong>Operational Efficiency:</strong> Identified that "Standard Class" is the most preferred shipping mode, accounting for $0.33M in sales volume.</li>
+                <li><strong>Financial Health:</strong> Maintained a healthy profit of $175K against $1.6M in sales.</li>
+            </ul>
+
+            <h2 class="section-title">Forecasting & Predictive Modeling</h2>
+            <img src="superstore_forecast.png" alt="15 Day Forecast" class="dashboard-preview">
+            <p>
+                Using historical data from 2019 to 2021, I implemented a 15-day sales forecast to visualize future demand spikes and prepare supply chains.
+            </p>
+
+            <h2 class="section-title">Technical Skills Applied</h2>
+            <ul>
+                <li><strong>SQL:</strong> Extracted and analyzed pizza sales and superstore data using complex queries.</li>
+                <li><strong>DAX:</strong> Created measures for quarterly trends, weekly revenue tracking, and interest analysis.</li>
+                <li><strong>Data Visualization:</strong> Designed dynamic slicers and drill-down visuals to enable actionable business insights[cite: 17].</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

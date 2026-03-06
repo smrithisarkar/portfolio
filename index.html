@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smriti Sarkar - Data Analyst Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px; /* Increased from 1200px */
+            margin: 0 auto;
+            padding: 30px 20px; /* Increased padding */
+        }
+
+       /* ULTRA TALL HEADER - LARGER LEFT-ALIGNED PROFILE PIC */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 100px 60px; /* EVEN TALLER - 100px top/bottom */
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    margin-bottom: 70px;
+    min-height: 480px; /* MUCH TALLER - 480px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px; /* More gap for larger elements */
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.profile-pic {
+    width: 320px; /* MUCH LARGER - 260px */
+    height: 320px;
+    border-radius: 80%;
+    background-color: white;
+    border: 18px solid white;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 110px; /* HUGE icon */
+    color: white;
+    flex-shrink: 0;
+    margin-right: -20px; /* MOVED LEFT with negative margin */
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-pic::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #667eea);
+    border-radius: 50%;
+    z-index: -1;
+    animation: rotate 20s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.profile-info {
+    max-width: 600px; /* Wider text area */
+    text-align: left; /* Left-aligned text for better balance */
+}
+
+.profile-info h1 {
+    font-size: 3.8rem; /* GIGANTIC name */
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.profile-info .title {
+    font-size: 1.9rem; /* Larger subtitle */
+    color: #667eea;
+    font-weight: 700;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.profile-info .tagline {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 45px;
+    max-width: 500px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+.profile-summary {
+    font-size: 1.0rem;
+    color: #666;
+    margin-bottom: 25px;
+    margin-left: 10px;
+    max-width: 500px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.download-resume {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 22px 55px; /* TALLEST button */
+    border-radius: 60px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.25rem;
+    transition: all 0.4s ease;
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.5);
+    letter-spacing: 1px;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-resume::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.download-resume:hover::before {
+    left: 100%;
+}
+
+.download-resume:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 30px 60px rgba(102, 126, 234, 0.7);
+    border-color: rgba(255,255,255,0.3);
+}
+
+
+
+        /* Section Styles - WIDER */
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 25px; /* Larger radius */
+            padding: 60px 60px; /* Much wider padding */
+            margin-bottom: 50px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            font-size: 2.5rem; /* Larger section titles */
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* Skills Section - Wider Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider cards */
+            gap: 40px; /* More spacing */
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #f8f9ff, #e8ecff);
+            padding: 35px; /* Wider padding */
+            border-radius: 20px;
+            border-left: 6px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.25);
+        }
+
+        .skill-category h3 {
+            font-size: 1.5rem; /* Larger */
+            color: #2c3e50;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 12px 0;
+            color: #555;
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+
+        .skill-list li i {
+            color: #667eea;
+            margin-right: 15px;
+            width: 25px;
+        }
+
+        /* Projects Section - Wider Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Wider project cards */
+            gap: 40px; /* More spacing */
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 25px; /* Larger radius */
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+        }
+
+        /* Custom Project Images */
+.project-custom-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* Perfectly fills the space */
+    object-position: center;  /* Centers the image */
+    border-radius: 0;         /* Matches card radius */
+    transition: all 0.4s ease;
+}
+
+.project-image {
+    height: 220px;
+    background: linear-gradient(135deg, #667eea, #764ba2); /* Fallback */
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card:hover .project-custom-img {
+    transform: scale(1.05);   /* Zoom effect on hover */
+    filter: brightness(1.1);  /* Slight brightness boost */
+}
+
+.project-card:hover .project-image {
+    background: none;         /* Remove fallback on hover */
+}
+
+        .project-content {
+            padding: 35px; /* Wider content */
+        }
+
+        .project-title {
+            font-size: 1.5rem; /* Larger titles */
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+
+        .project-tech {
+            color: #667eea;
+            font-weight: 500;
+            font-size: 1.05rem;
+            margin-bottom: 18px;
+        }
+
+        .project-description {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        /* Modal - Wider */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 25px;
+            width: 90%;
+            max-width: 1000px; /* Wider modal */
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .close {
+            position: absolute;
+            right: 30px;
+            top: 25px;
+            font-size: 2.2rem;
+            color: #aaa;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px 40px 30px; /* Wider header */
+            border-radius: 25px 25px 0 0;
+        }
+
+        .modal-body {
+            padding: 50px 50px 50px; /* Much wider body */
+        }
+
+        .modal-tech-tags {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+
+        .tech-tag {
+            background: #e8ecff;
+            color: #667eea;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .profile-section {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .profile-pic {
+                width: 160px;
+                height: 160px;
+                font-size: 65px;
+            }
+
+            .section {
+                padding: 40px 30px; /* Still generous on mobile */
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 8% auto;
+            }
+            
+            .modal-body {
+                padding: 30px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 40px 25px;
+            }
+            
+            .section {
+                padding: 30px 25px;
+            }
+        }
+        a {
+            text-decoration: none;
+            }
+
+        /* Scrollbar */
+        .modal-content::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .modal-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Same HTML content as before - no changes needed -->
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="profile-section">
+                <div >
+                     <img src="mypic.jpeg" class="profile-pic" >
+                </div>
+                <div class="profile-info">
+                    <h1>Smriti Sarkar</h1>
+                    <p class="title">Data Analyst</p>
+                    <div class="profile-summary">
+    <p>Recent graduate with hands-on expertise in Power BI, Python, Excel, and SQL. Completed real-world projects showcasing interactive dashboards, data cleaning, and predictive analytics. Passionate about leveraging data to solve business challenges and eager to contribute fresh perspectives to innovative teams.</p>
+</div>
+
+                    <a href="smrithi_resume.pdf" class="download-resume" download>
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Skills Section -->
+        <section class="section">
+            <h2><i class="fas fa-chart-line"></i> Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Data Visualization</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> Power BI </li>
+                        <li><i class="fas fa-check"></i> Tableau</li>
+                        <li><i class="fas fa-check"></i> Excel Dashboards</li>
+                        <li><i class="fas fa-check"></i> DAX</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> Python (Pandas, NumPy)</li>
+                        <li><i class="fas fa-check"></i> SQL </li>
+                        <li><i class="fas fa-check"></i> R</li>
+                        <li><i class="fas fa-check"></i> VBA</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cogs"></i> Data Analysis</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> Excel </li>
+                        <li><i class="fas fa-check"></i> Statistical Analysis</li>
+                        <li><i class="fas fa-check"></i> Data Cleaning</li>
+                        <li><i class="fas fa-check"></i> ETL Processes</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> Microsoft server Management</li>
+                        <li><i class="fas fa-check"></i> Google Analytics</li>
+                        <li><i class="fas fa-check"></i> Power Query</li>
+                        <li><i class="fas fa-check"></i> Git</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-handshake"></i> Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i>Communication skills</li>
+                        <li><i class="fas fa-check"></i>Interpersonal skills</li>
+                        <li><i class="fas fa-check"></i>problem-solving skills</li>
+                        <li><i class="fas fa-check"></i>Analytical skills</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section">
+            <h2><i class="fas fa-project-diagram"></i> Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Same project cards as before -->
+                <div class="project-card" ><a href="superstore.html">
+                    <div class="project-image">
+                        <img src="Superstore.png" alt="Customer Segmentation" class="project-custom-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Super Store Sales Analytics Dashboard</h3>
+                        <p class="project-tech">Power BI • DAX • SQL</p>
+                        <p class="project-description">Interactive dashboard tracking sales performance across multiple regions with drill-down capabilities and forecasting.</p>
+                    </div></a>
+                </div>
+
+                <div class="project-card" ><a href="credit_card.html">
+                    <div class="project-image">
+                       <img src="cc_customer.png" alt="Customer Segmentation" class="project-custom-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title"> Credit Card Financial Dashboard</h3>
+                        <p class="project-tech">Power BI • SQL • DAX </p>
+                        <p class="project-description">Comprehensive Credit Card Transaction and Credit Card customer dashboard analyzing Customer details,and performance metrics.</p>
+                    </div></a>
+                </div>
+
+                <div class="project-card" >
+                    <div class="project-image"><a href="pizza_sales.html">
+                        <img src="pizzaDAshboard.png" alt="Customer Segmentation" class="project-custom-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Pizza Sales Analysis</h3>
+                        <p class="project-tech">Excel • Sales Analysis</p>
+                        <p class="project-description">Interactive dashboard identifying peak-hour operational trends and category-wise performance with drill-down capabilities for inventory optimization.</p>
+                    </div></a>
+                </div>
+
+                <div class="project-card" >
+                    <div class="project-image"><a href="diwali_sales.html">
+                        <img src="python.png" alt="Customer Segmentation" class="project-custom-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Diwali Sales</h3>
+                        <p class="project-tech">Python • Pandas • Machine Learning</p>
+                        <p class="project-description">Diwali Sales analysis using clustering algorithms and predictive modeling.</p>
+                    </div></a>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <h2><i class="fas fa-briefcase"></i> Experience</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Salesforce Administrator – Virtual Internship</h3>
+        <ul>
+            <li>Managed and structured CRM data to ensure data accuracy and consistency.</li>
+            <li>Configured workflows, reports, and dashboards to support business processes.</li>
+            <li>Automated routine operations to improve reporting efficiency.</li>
+            <li>Gained hands-on experience in CRM data handling and analytics-based decision support.</li>
+        </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Freelance Graphic Design</h3>
+
+        <ul>
+            <li>Collaborated with clients to analyze project requirements and deliver tailored visual solutions.</li>
+            <li>Applied analytical thinking to transform client data into structured visual content.</li>
+            <li>Managed multiple projects simultaneously while meeting strict deadlines.</li>
+            <li>Strengthened communication, stakeholder coordination, and problem-solving skills.</li>
+        </ul>
+                </div>
+            </div>
+        </section>
+
+
+<section class="section animated-item delay-2" style="text-align: center;">
+    <h2><i class="fa fa-link"></i> Let's Connect</h2>
+    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+        <a href="mailto:smrithisarkar01@gmail.com" class="download-resume" style="padding: 15px 40px; font-size: 1rem;  background: #2c3e50; ">
+            <i class="fas fa-at"></i> Email Me
+        </a>
+        <a href="https://www.linkedin.com/in/smrithi-sarkar" target="_blank" class="download-resume" style="padding: 15px 40px; font-size: 1rem; background: #2c3e50;">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+         <a href="https://github.com/smrithisarkar" target="_blank" class="download-resume" style="padding: 15px 40px; font-size: 1rem; background: #2c3e50;">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+    </div>
+</section>
+    </div>
+    
+    </div>
+</body>
+</html>
